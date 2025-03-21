@@ -1,0 +1,9 @@
+Project - OS Kernel Simulator
+The OS Kernel Simulator is a project that simulates core functionalities of an operating system's kernel.
+It manages process scheduling, memory management, and system calls, allowing users to interact with a 
+simplified kernel environment.
+Project Goals:
+Simulate process creation, scheduling, and termination.
+Implement CPU scheduling algorithms (e.g., FCFS, Round Robin).
+Handle memory allocation and paging.
+Provide a command-line and web-based interface for user interaction.

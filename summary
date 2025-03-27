@@ -1,0 +1,44 @@
+Summary of OS Kernel Simulator
+Project Overview
+
+The OS Kernel Simulator is a C++ tool that simulates process scheduling, memory allocation, and file system operations to aid in learning OS concepts.
+
+Modules & Functionalities
+
+Process Management
+
+Executes CPU scheduling algorithms:
+FCFS, SJF, SRTF, RR, Priority, MLQ, MLFQ
+Simulates execution delay through this_thread::sleep_for.
+Logs execution order in real time.
+Memory Management
+
+Applies contiguous memory allocation to processes.
+Supports dynamic allocation & deallocation of memory.
+Displays used memory.
+File System
+
+Supports file creation, reading, and deletion in memory storage.
+A key-value store (unordered_map) is used for file operations.
+Technology Used
+
+C++ STL (queue, vector, map, thread, chrono)
+g++ Compiler (for compiling)
+GitHub (version control)
+Scheduling Algorithms Implemented
+
+FCFS → First come in, first out.
+SJF → First execute with shortest burst time.
+SRTF → Shortest burst time remaining to be executed.
+Round Robin (RR) → Time-based execution with quantum.
+Priority Scheduling → Processes executed according to priority.
+MLQ (Multi-Level Queue) → Processes divided into high/low-priority queues.
+MLFQ (Multi-Level Feedback Queue) → Dynamically changes process priority among queues.
+Future Improvements
+
+Advanced scheduling (EDF, Lottery Scheduling).
+Paging & Virtual Memory for improved memory management.
+File system enhancements (directories, permissions).
+GUI-based representation of OS functionality.
+Inter-Process Communication (IPC) integration.
+The OS Kernel Simulator offers practical hands-on training in OS-level process scheduling, memory management, and file handling concepts, which makes it a great tool to learn system programming.

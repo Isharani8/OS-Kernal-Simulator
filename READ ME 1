@@ -1,0 +1,41 @@
+ CODE:
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Process {
+    int pid, arrival, burst, completion, waiting, turnaround;
+};
+
+bool cmp(Process a, Process b) { return a.arrival < b.arrival; }
+
+void FCFS(vector<Process> &processes) {
+    sort(processes.begin(), processes.end(), cmp);
+    int time = 0;
+    for (auto &p : processes) {
+        if (time < p.arrival) time = p.arrival;
+        time += p.burst;
+        p.completion = time;
+        p.turnaround = p.completion - p.arrival;
+        p.waiting = p.turnaround - p.burst;
+    }
+}
+
+int main() {
+    int n;
+    cout << "Enter number of processes: ";
+    cin >> n;
+    vector<Process> processes(n);
+    cout << "Enter Arrival Time and Burst Time:\n";
+    for (int i = 0; i < n; i++) {
+        processes[i].pid = i + 1;
+        cin >> processes[i].arrival >> processes[i].burst;
+    }
+    FCFS(processes);
+    cout << "\nExecution Order:\n";
+    for (auto &p : processes) cout << "P" << p.pid << " ";
+    return 0;
+}
+
+
